@@ -50,52 +50,24 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Peak Lane Saudi Website",
       category: "Web Development",
-      description: "Modern e-commerce solution with React, Next.js, and Stripe integration. Features advanced product filtering, wishlist functionality, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
-      gradient: "from-blue-600 to-purple-600"
+      description: "A modern business website for Peak Lane Saudi with responsive design, animations, and smooth user experience.",
+      image: "https://i.ibb.co/LvngD2B/peaklane.png", // ekta screenshot link use korle valo hobe
+      tech: ["React", "Tailwind CSS", "GSAP", "Netlify"],
+      gradient: "from-blue-500 to-indigo-500",
+      live: "https://peak-lane-saudi.netlify.app/",
+      github: ""
     },
     {
-      title: "Flutter Food Delivery App",
-      category: "Mobile App",
-      description: "Cross-platform food delivery application with real-time tracking, payment integration, and restaurant management system.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-      tech: ["Flutter", "Firebase", "Google Maps", "Stripe", "Node.js"],
-      gradient: "from-green-500 to-teal-500"
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "Web Application",
-      description: "Comprehensive analytics dashboard for SaaS businesses with real-time data visualization, user management, and billing integration.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "TypeScript", "D3.js", "Node.js", "PostgreSQL"],
-      gradient: "from-purple-600 to-pink-600"
-    },
-    {
-      title: "Real Estate Platform",
-      category: "Web Development",
-      description: "Property listing platform with advanced search filters, virtual tours, and integrated mortgage calculator.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
-      tech: ["Vue.js", "Laravel", "MySQL", "Google Maps", "AWS"],
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Healthcare Management System",
-      category: "Web Application",
-      description: "Complete healthcare management solution with patient records, appointment scheduling, and telemedicine features.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "Node.js", "MongoDB", "Socket.io", "WebRTC"],
-      gradient: "from-cyan-500 to-blue-500"
-    },
-    {
-      title: "Fitness Tracking App",
-      category: "Mobile App",
-      description: "Flutter-based fitness application with workout tracking, nutrition logging, and social features for fitness enthusiasts.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
-      tech: ["Flutter", "Firebase", "HealthKit", "Google Fit", "Charts"],
-      gradient: "from-indigo-500 to-purple-500"
+      title: "BestMart BD E-commerce",
+      category: "E-commerce",
+      description: "Bangladesh based online marketplace with full-featured shopping experience, cart, checkout, and order management.",
+      image: "https://i.ibb.co/XWZCGLt/bestmart.png", // ekhane real screenshot dile aro professional hobe
+      tech: ["PHP", "MySQL", "Bootstrap", "cPanel"],
+      gradient: "from-green-500 to-teal-500",
+      live: "https://bestmartbd.com/",
+      github: ""
     }
   ];
 
@@ -141,12 +113,20 @@ const Portfolio = () => {
                 {/* Overlay Actions */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-4">
-                    <Button size="sm" variant="secondary" className="bg-white/90 text-gray-900 hover:bg-white">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="secondary" className="bg-white/90 text-gray-900 hover:bg-white">
-                      <Github className="h-4 w-4" />
-                    </Button>
+                    {project.live && (
+                      <Button asChild size="sm" variant="secondary" className="bg-white/90 text-gray-900 hover:bg-white">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {project.github && (
+                      <Button asChild size="sm" variant="secondary" className="bg-white/90 text-gray-900 hover:bg-white">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
